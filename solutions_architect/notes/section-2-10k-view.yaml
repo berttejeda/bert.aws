@@ -1,0 +1,96 @@
+-
+  topic: Who is the current CEO of Amazon Web Services
+  content: |-
+    Andy Jassy
+    "
+    Invention requires two things
+    1. The ability to try a lot of experiments
+    2. Not having to live with the collateral damage of failed experiments
+    "
+  keywords: aws, about, history, company  
+-
+  topic: What is the AWS Timeline?
+  content: |-
+    2003, 2004, 2006
+    - 2004
+      SQS officially launched
+    - 2006
+      AWS Officially Launched
+    - 2007
+      Over 180,000 developers on platform
+    - 2010
+      All of amazon.com moved over to AWS
+    - 2012
+      First re:Invent Conference
+    - 2013
+      Certifications Launched
+    - 2014
+      100% renewable energy usage
+    - 2015
+      AWS breaks out its revenue, $6B USD/per annum
+    - 2016
+      Run rate of $13B USD
+    - 2017
+      AI Services
+      Run rate of $17B USD
+    - 2018
+      Machine-Learning Certifications
+    - 2019
+      Alexa Specialty Beta Certificate Launched
+      Currently you can get 10 certifications
+  keywords: aws, about, certifications, timeline
+-
+  topic: 10,000 Foot View
+  content: |-
+    From the console, you can group services or list in A-Z fashion
+    US Northern Virginia Region
+      - New Services released here first
+      - Goes down the most (lol)
+    Some notable services in the Global Infrastructure:
+      * Compute:
+        - EC2
+        - Lambda
+      * Storage:
+        - S3
+        - EFS
+      * Databases:
+        - RDS
+        - Dynamo DB (non-relational)
+      Migration & Transfer:
+      Network & Content Delivery:
+        - Route53
+        - VPC (Virtual Private Cloud)
+        - Cloudfront
+      * Network & Content Delivery:
+      Management & Governance:
+      Analytics:
+      * Securty, Identity & Compliance:
+        - Identity & Access Management (IAM)
+      Mobile:
+      AR & VR:
+      Application Integration:
+      AWS Cost Management:
+      IOT:
+      Desktop Streaming:
+  keywords: aws, about, global, infrastructure
+-
+  topic: Regions vs Availability Zones
+  content: |-
+    Availability Zone == Data Center (building filled with servers)
+      An Availability Zone (AZ) is a distinct location within an AWS Region. Each Region comprises at least two AZs.
+    Can be more than 1 Data Center
+    Region == A geographical area, 2 or more Availability Zones
+      Each region is a separate geographic area. 
+      Each region has multiple, isolated locations known as Availability Zones.
+      A region is a geographical area divided into Availability Zones. Each region contains at least two Availability Zones.
+    Regions
+      - North America
+      - South America
+      - EMEA
+      - APAC
+    Edge network Locations
+      - CDN
+      - CloudFront content is cached in Edge Locations.
+    The number of Edge Locations is greater than the number of Availability Zones, 
+    which is greater than the number of Regions.
+  keywords: aws, about, global, infrastructure  

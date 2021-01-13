@@ -1,0 +1,57 @@
+-
+  topic: What is Identity and Access Management (IAM)?
+  content: |-
+    IAM allows you to manage users and their level of access to the AWS console
+    IAM is a universal/globally-scoped feature, i.e. it does not require a region selection
+  keywords: aws, security, iam
+-
+  topic: What are some features of Identity and Access Management (IAM)?
+  content: |-
+    - Centralized control of your AWS account
+    - Shared Access to your AWS account
+    - Granular Permission
+    - Identity Federation (e.g. Active Directory, Facebook, Linkedin)
+    - Multifactor Authentication
+    - Provide temporary access for user/devices and services where necessary
+    - Allows you to set up your own password rotation policy
+    - Integrates with many different AWS services
+    - Supports PCI DSS Compliance
+  keywords: aws, security, iam
+-
+  topic: Name four key Terminologies for Identity and Access Management (IAM)?
+  content: |-
+    - Users
+    - Groups
+    - Policies
+      Assign Permissions to Users,Groups,Roles
+    - Roles
+      Assign these to AWS Resources
+  keywords: aws, security, iam
+-
+  topic: What is the AWS Root Account?
+  content: |-
+    Email Address of the Account you used to setup your AWS account
+  keywords: aws, security, iam, god, mode, root
+-
+  topic: Name some best practices for securing the root account
+  content: |-
+    - Always setup Multifactor Authentication
+    - Create and customize your own password rotation policies
+  keywords: aws, security, iam, god, mode, root
+-
+  topic: What is an AWS IAM Policy?
+  content: |-
+    This is an AWS feature that Assigns Permissions to Users,Groups, and Roles
+    It is represented as a JSON object
+  keywords: aws, security, iam, god, mode, root
+-
+  topic: Name 2 types of access mechanisms for users
+  content: |-
+    Console Access
+    Access Key ID/Secret Access Keys (these can only be used for programmatic access)
+  keywords: aws, security, iam, god, mode, root  
+-
+  topic: What is an AWS IAM Role?
+  content: |-
+    Roles can allow one AWS service to use another AWS service
+  keywords: aws, security, iam, god, mode, root

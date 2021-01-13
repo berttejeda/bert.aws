@@ -1,0 +1,277 @@
+-
+  topic: What is an AWS billing alarm?
+  content: |-
+    An amount that you set (e.g. $10) which triggers an alert once that 
+    amount has been met/exceeded
+  keywords: aws, billing, cost, alarms, cloudwatch
+-
+  topic: What are the Key fundamentals of Amazon S3?
+  content: |-
+    S3 (Simple Storage Service) provides developers and IT teams
+    with secure, durable, highly scalable object storage.
+    It is a safe place to store your files.
+    - Object-based storage
+      - Key (Name of the object)
+      - Value (the data is made up of a sequence of bytes)
+      - Version (Version ID)
+      - Metadata (data about the data you are storing)
+      - Subresources
+        - Access Control Lists (object/bucket-level permissions)
+        - Torrents
+    - Spread across multiple devices and facilities
+    - 0 Bytes to 5TB
+    - Unlimited Storage
+    - Files are stored in buckets (a.k.a folders)
+    - S3 is a universal namespace, that is, bucket names must be unique globally
+      e.g. 
+        https://acloudguru.s3.amazonaws.com (if created in the default region Northern Virginia)
+        or
+        https://acloudguru.eu-west-1.amazonaws.com (if created in Ireland for example)
+    - File uploads return an HTTP 200 code if file upload is successful
+    - Not suitable to install an operating system on (use block storage for that)
+  keywords: aws, billing, cost, fso, s3, storage
+-
+  topic: How does data consistency work for S3?
+  content: |-
+    - Read after Write for PUTS of new Objects
+      If you write a new file and read it immediately,
+      afterwards, you will be able to view the data
+    - Eventual Consistency for overwrite PUTS 
+      and DELETES (can take some time to propagate)
+      If you update AN EXISTING file or delete a file,
+      and read it immediately, you may or may not get the 
+      older version. This is because changes can take time to 
+      propagate
+  keywords: aws, billing, cost, fso, s3, storage
+-
+  topic: What are the S3 guarantees from Amazon?
+  content: |-
+    - Built for 99.99% availability for the S3 platform
+    - Amazon Guarantees 99.9% availability
+    - Amazon Guarantees 99.(119s)% for durability
+  keywords: aws, billing, cost, fso, s3, storage
+-
+  topic: What are some of the most notable S3 features?
+  content: |-
+    - Tiered Storage Available
+    - Lifecycle Management
+    - Versioning
+    - Encryption
+    - MFA Delete
+    - Secure your data using Access Control Lists and
+      Bucket Policies
+  keywords: aws, billing, cost, fso, s3, storage  
+-
+  topic: What are the S3 storage tiers?
+  content: |-
+    6 Total (so far)
+    - S3 Standard
+      99.99% 
+    - S3 - IA (Infrequently Accessed)
+    - S3 - One Zone - IA (Infrequently Accessed, in one Availability Zone)
+      This is more/less the same as soon-to-be-phased-out 
+      Amazon Reduced Redundancy Storage (RRS)
+    - S3 - Intelligent Tiering
+      Moves your data around to achieve most cost-effective tier
+      and maximize cost savings
+    - S3 Glacier
+      secure, durable, low-cost storage class for data archiving
+      retrieval times can go from minutes to hours
+    - S3 Glacier Deep Archive
+      lowest-cost storage class where a retrieval time of 12 hours is acceptable
+      see:
+        S3 Comparison Chart
+        site:amazon.com S3 Comparison Chart - Google Search
+        Comparing your on-premises storage patterns with AWS Storage services | AWS Storage Blog
+          https://aws.amazon.com/blogs/storage/comparing-your-on-premises-storage-patterns-with-aws-storage-services/
+        S3 availability and durability — AWS S3 Solutions Architect Exam Topic | by David Oh | Medium
+          https://medium.com/@davidoh0905/aws-s3-solutions-architect-exam-s3-availability-and-durability-96700c1c6d8c
+      toread:
+        S3 FAQs
+          Amazon Simple Storage Service (S3) — Cloud Storage — AWS
+            https://aws.amazon.com/s3/faqs/        
+  keywords: aws, billing, cost, fso, s3, storage    
+-
+  topic: Describe how you get billed for S3 storage
+  content: |-
+    - Storage
+      The more you store, the more you'll be billed
+    - Requests
+    - Storage Management Pricing
+    - Data Transfer Pricing
+    - Transfer Acceleration 
+    - Cross-Region Replication Pricing
+      e.g. auto-replicating S3 bucket from US-East-1 to Sydney
+    Amazon S3 Transfer Acceleration leverages CloudFront's edge locations
+    Utilize the Amazon backbone network
+  keywords: aws, billing, cost, fso, s3, storage 
+-
+  topic: What are some ways you can restrict or secure S3 bucket access?
+  content: |-
+    - Bucket Policies - Applies across the whole bucket
+    - Object Policies - Applies to individual files
+    - IAM Policies to Users & Groups - Applies to Users & Groups
+    - S3 buckets can be configured to create access logs
+      These can even be sent to another bucket, including those from different AWS accounts
+  keywords: aws, billing, cost, fso, s3, security, permissions, access, control
+-
+  topic: What are the main pricing metrics for S3?
+  content: |-
+    - Storage
+    - Requests and Data Retrievals
+    - Data Transfer
+    - Management & Replication
+  keywords: aws, billing, cost, fso, s3, storage     
+-
+  topic: Name all the different S3 storage tiers, from highest cost to least
+  content: |-
+    - S3 Standard
+    - S3 - IA
+    - S3 One Zone - IA
+    - S3 - Intelligent Tiering (can switch between S3 Standard and S3 - IA for you)
+    - S3 Glacier
+    - S3 Glacier Deep Archive
+  keywords: aws, billing, cost, fso, s3, storage, tiers       
+-
+  topic: What are some considerations when selecting your S3 storage tier
+  content: |-
+    Pricing is at cents per Gig per month
+    - Frequency of Requests
+    - Number of Objects
+    - Amount of Data
+    examples:
+    Scenario: You are storing OS templates with a non-predictable pattern of requests
+    Consideratios:
+      You might think that S3 Standard would suffice for your files,
+      however, do consider S3 Intelligent Tiering instead, as the feature
+      might switch your storage tier to Infrequent Access, which roughly half that
+      of the S3 Standard
+    S3 - Intelligent Tiering should be used in place of S3 Standard, unless
+    you have a high number of objects
+  keywords: aws, billing, cost, fso, s3, storage, tiers    
+-
+  topic: Describe S3 encryption
+  content: |-
+    Encryption In Transit is achieved by 
+      - SSL/TLS
+    Encryption At Rest (Server Side) is achieved by
+      - S3 Managed Keys - SSE-S3 (Server-Side Encryption S3)
+      - Keys - SSE-KMS
+      - Server Side Encryption With Customer-Provided Keys - SSE-C
+    Client Side Encryption
+    Encryption can be done at the Bucket or Object Level
+  keywords: aws, fso, s3, storage, encryption, security
+-
+  topic: Describe Versioning in S3
+  content: |-
+    - Stores all versions of an object (including all writes and even if you delete an object)
+    - Serves as a backup tool
+    - Once enabled on a bucket, cannot be disabled, only suspended
+      Must delete a bucket and create a new one in order to disabled
+    - Integrates with Lifecycle rules
+    - MFA Delete capability, which provides an additional layer of security for your objects
+  keywords: aws, fso, s3, storage, encryption, security
+-
+  topic: What happens when you delete a versioned object in an S3 bucket?
+  content: |-
+    A delete marker is placed on the object, which causes the object
+    to be hidden from regular viewing.
+    In order to list the file and its versions, you'll have to enable the
+    list-versions option.
+    To undo your delete,  you'll have to delete the delete marker.
+    Deleting versions of your file cannot be undone, as these are not affixed 
+    a delete marker
+  keywords: aws, fso, s3, storage, encryption, security  
+-
+  topic: Describe Lifecycle Rules
+  content: |-
+    Lifecycle Rules govern how S3 objects are mananaged
+    - This automates moving your objects between storage tiers
+    - Can be used in conjunction with versioning
+    - Can be applied to current versions and previous versions
+    Rule Scope:
+      Limit Scope
+      Entire Bucket
+    Once you finish adding your transitions, you can review the actions by 
+    scrolling down to the Timeline summary
+  keywords: aws, fso, s3, storage, lifecycle, tiers
+-
+  topic: Describe S3 Object and Glacier Vault Lock
+  content: |-
+    Use the S3 Object Lock to store objects using write-once read many (WORM) model.
+    It can help you prevent objects from being deleted or modified for a fixed amount
+    of time or indefinitely.
+    You can also use it as an extra layer of protection against modification/deletion
+    Come in two modes:
+      - Governance Mode
+        Users can't overwrite or delete an object version or alter its lock settings
+        unless they have special permissions.
+      - Compliance Mode
+        A protected object version can't be overwritten or deleted by any user, 
+        including the root user!
+        Ensures the S3 object is protected for the duration of the retention period
+        When you place a retention period on an object version, AWS S3 stores a timestamp
+        in the object version's metadata
+    Legal Holds
+      Prevents an object version from being overwritten or deleted
+      However a legal hold doesn't have an associated retention period and
+      remains in effect until removed. These can be freelly placed and removed by
+      any user who has the s3:PutObjectLegalHold permission
+
+    S3 Glacier Vault Lock Allows you to easily deploy and enforce compliance controls
+    for individual S3 Glacier vaults with a Vault Lock policy.
+    Once locked, the policy can no longer be changed.
+  keywords: aws, fso, s3, storage, object, lock, protection, modes, legal, hold, glacier, vault, lock, protection, modes
+-
+  topic: What's the difference between S3 Object Lock and Glacier Vault Lock?
+  content: |-
+    - Object lock is for S3 objects in S3
+      - Governance Mode
+      - Compliance Mode
+    - Glacier Vault Lock is for vaults inside of S3 Glacier
+  keywords: aws, fso, s3, storage, object, lock, protection, modes, legal, hold, glacier, vault, lock, protection, modes, difference
+-
+  topic: What is a prefix with S3?
+  content: |-
+    - mybucketname/folder1/subfolder1/myfile.jpg (prefix == /folder1/subfolder1)
+    - mybucketname/folder2/subfolder1/myfile.jpg (prefix == /folder2/subfolder1)
+    - mybucketname/folder3/subfolder1/myfile.jpg (prefix == /folder3/subfolder1)
+    - mybucketname/folder4/subfolder4/myfile.jpg (prefix == /folder4/subfolder4)
+  keywords: aws, fso, s3, storage, object, prefix
+-
+  topic: Describe some aspects of S3 Performance
+  content: |-
+    Extremely low latency
+    You can get the first byte out of S3 within 100-200 milliseconds
+  keywords: aws, fso, s3, storage, performance, latency
+-
+  topic: What are some actions you can take to improve S3 Performance?
+  content: |-
+    S3 offers a High number of requests per second, per prefix:
+      - 3,500 PUT/COPY/POST/DELETE
+      - 5,500 GET/HEAD requests 
+    You can get better performance by spreading your reads across
+    different prefixes
+    e.g. 
+      - 2 prefixes == 11,000 requests per second
+      - 4 prefixes == 22,000 requests per second
+    Implement multipart uploads
+      - Recommended for files > 100MB
+      - Required for files over 5GB
+      - Parallelize uploads (increases efficiency)
+    Implement S3 Byte-Range Fetches for downloads
+      - Parallelize downoads by specifying byte ranges
+      - Failures are isolated to specific byte ranges
+      - Speeds up downloads
+      - Can be used to download parts of a file (e.g. header information)
+  keywords: aws, fso, s3, storage, performance, latency, speed, design, considerations, improvements, efficiency
+-
+  topic: What are some considerations you should keep in mind regarding S3 Performance and encryption?
+  content: |-
+    - If using SSE-KMS Encryption, you must keep in mind the KMS limits
+      - Upload/Download counts against the region-specific KMS quota
+        - 5,400, 10,000, or 30,000 per second
+      - You cannot request a quota increase for KMS
+    - When you upload a file, you will call GenerateDataKey in the KMS API
+    - When you download a file, you will call Decrypt in the KMS API
+  keywords: aws, fso, s3, storage, performance, latency, speed, design, considerations, kms, encryption

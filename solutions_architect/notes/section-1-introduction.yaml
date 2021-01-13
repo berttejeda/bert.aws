@@ -1,0 +1,29 @@
+-
+  topic: What are some tips setting up your AWS account?
+  content: |-
+    - Keep an image backup of any MFA QR codes!
+  keywords: aws, account, setup
+-
+  topic: Describe the AWS Partner Program
+  content: |-
+    Much like what Microsoft does ...
+    If you've got a company with a bunch of AWS-certified 
+    employees, you'll get AWS credits/discounts.
+    The Partner Levels are:    
+    Select, Advanced, Premier
+    and the certifications breakdown is listed below, 
+    in respective fashion:
+    Practitioner Certs: 2,4,10
+    Associate Certs: 2,4,10
+    Professional/Specialty Certs: 0,3,10
+  keywords: aws, certifications
+-
+  topic: What are some AWS Certification Tiers?
+  content: |-
+    Practitioner, Associate, Professional, Specialty
+  keywords: aws, certifications, tiers, levels
+-
+  topic: List some AWS Certificates from Easy to Hard
+  content: |-
+    Certified Cloud Practitioner, Solutions Architect Associate, ... Solutions Architect Professional
+  keywords: aws, certifications
