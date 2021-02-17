@@ -1,10 +1,4 @@
 -
-  topic: What is an AWS billing alarm?
-  content: |-
-    An amount that you set (e.g. $10) which triggers an alert once that 
-    amount has been met/exceeded
-  keywords: aws, billing, cost, alarms, cloudwatch
--
   topic: What are the Key fundamentals of Amazon S3?
   content: |-
     S3 (Simple Storage Service) provides developers and IT teams
@@ -275,3 +269,49 @@
     - When you upload a file, you will call GenerateDataKey in the KMS API
     - When you download a file, you will call Decrypt in the KMS API
   keywords: aws, fso, s3, storage, performance, latency, speed, design, considerations, kms, encryption
+-
+  topic: What is S3 Select?
+  content: |-
+    Enables applications to retrieve only a subset of data from an object by using 
+    simple SQL expressions. 
+    You retrieve only the data needed by your application
+    Benefits:
+      - Drasitc Performance increases (in some cases as much as 400% improvement)
+    Examples:
+      Grab a file from a zip file instead of downloading the entire zip file
+  keywords: aws, fso, s3, storage, select, performance, bandwidth, savings, subset, data, sql, expressions
+-
+  topic: What is S3 Glacier Select?
+  content: |-
+    Some companies in highly regulated industries -- 
+    e.g. financial services, healthcare, etc -- write
+    data directly to Amazon Glacier to satisfy compliance needs like 
+    SEC Rule 17a-4 or HIPAA
+    Glacier Select anables applications to retrieve only a subset of data from an object by using 
+    simple SQL expressions against Glacier directly.
+    Same as S3 select, you retrieve only the data needed by your application
+    Benefits:
+      - Drasitc Performance increases (in some cases as much as 400% improvement)
+    Examples:
+      Grab a file from a zip file instead of downloading the entire zip file
+  keywords: aws, fso, s3, storage, select, performance, bandwidth, savings, subset, data, sql, expressions
+-
+  topic: Describe the ways in which you can share S3 buckets across accounts
+  content: |-
+    There are currently 3 different ways to share S3 buckets across accounts
+      - Using Bucket Policies & IAM (applies across the entire bucket)
+        Allows Programmatic Access Only
+      - Using Bucket ACLs & IAM (individual objects). Programmatic Access Only
+      - Cross-account IAM Roles. Programmatic AND Console access
+  keywords: aws, organization, cross, different, accounts, management, centralized, ou, root, account, s3, storage, shared, access, multiple
+-
+  topic: How do you switch roles in an AWS organization?
+  content: |-
+    * Create a role and attach it to another AWS account id
+    * Once you've worked out the permissions and created the role,
+      you should see a switchrole share link.
+    * Save this link and logout, then log into your managed AWS account (the one for which you provided access)
+    * Once logged in, create another user for this AWS account, log out of the current session, then back in as the newly-created user
+    * You should now be able to navigate to the link you copied from before
+    * You can also switch roles by clicking the 'Switch Roles' selection from your AWS User's drop-down menu
+  keywords: aws, organization, cross, different, accounts, management, centralized, ou, root, account, s3, storage, shared, access, multiple  

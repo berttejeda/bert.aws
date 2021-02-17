@@ -1,0 +1,48 @@
+-
+  topic: What is an AWS billing alarm?
+  content: |-
+    An amount that you set (e.g. $10) which triggers an alert once that 
+    amount has been met/exceeded
+  keywords: aws, billing, cost, alarms, cloudwatch
+-
+  topic: What are AWS Organizations?
+  content: |-
+    Account Management service that enables you to consolidate multiple
+    AWS accounts into an organization that you create and centrally manage
+    Best Practices:
+      - Account: Root Account
+        Type: Root
+        Use: Billing Only
+      - Account: Finance
+        Type: OU
+        Use: Finance
+      - Account: Dev
+        Type: OU
+        Use: Development
+      - Account: UAT
+        Type: OU
+        Use: User Acceptance Testing
+    Apply Policies against OUs
+    These trickle down to associated accounts
+  keywords: aws, organization, cross, different, accounts, management, centralized
+-
+  topic: Describe Conslidated Billing
+  content: |-
+    The more that you use, the less you pay
+    e.g. More S3 Storage you use, the less you pay
+    Advantages
+    - Consolidated Billing Takes into account the agregate of all your accounts, which 
+      is advantageous considering the above maxim
+    - One bill per AWS root account
+    - Volume pricing discount
+  keywords: aws, organization, cross, different, accounts, management, centralized, consolidated, billing, volume, pricing
+-
+  topic: What are some best practices regarding AWS Organizations?
+  content: |-
+      - Enable MFA for the Root account
+      - Use a strong and complex password on the Root account
+      - Paying account should be used for billing purposes only.
+        Do not deploy resources into the paying account
+      - Enable/Disable AWS services using Service Control Policies (SCP) either
+        on the Organization Unit OU or the individual accounts
+  keywords: aws, organization, cross, different, accounts, management, centralized, ou, root, account, best, practices
