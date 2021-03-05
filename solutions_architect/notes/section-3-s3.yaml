@@ -115,7 +115,7 @@
     - Requests and Data Retrievals
     - Data Transfer
     - Management & Replication
-  keywords: aws, billing, cost, fso, s3, storage     
+  keywords: aws, billing, cost, fso, s3, storage, replication
 -
   topic: Name all the different S3 storage tiers, from highest cost to least
   content: |-
@@ -301,7 +301,7 @@
     There are currently 3 different ways to share S3 buckets across accounts
       - Using Bucket Policies & IAM (applies across the entire bucket)
         Allows Programmatic Access Only
-      - Using Bucket ACLs & IAM (individual objects). Programmatic Access Only
+      - Using Bucket ACLs & IAM (individual objects) - Programmatic Access Only
       - Cross-account IAM Roles. Programmatic AND Console access
   keywords: aws, organization, cross, different, accounts, management, centralized, ou, root, account, s3, storage, shared, access, multiple
 -
@@ -315,3 +315,19 @@
     * You should now be able to navigate to the link you copied from before
     * You can also switch roles by clicking the 'Switch Roles' selection from your AWS User's drop-down menu
   keywords: aws, organization, cross, different, accounts, management, centralized, ou, root, account, s3, storage, shared, access, multiple  
+-
+  topic: Describe Cross-Region Replication
+  content: |-
+    - Replicate S3 objects between buckets in different regions within same or different accounts
+    - Requires source and destination buckets to have versioning enabled
+    - Can change storage class to replicated objects
+      This is good for backups
+    - Works with objects encrypted with AWS KMS
+    - Does not replicate existing objects, only newly-created objects
+    - Does not replicate public setting for objects
+    - Does not replicate delete markers
+    - Deleting individual versions or delete markers will not be replicated
+    - Typical Use Cases
+      Objects in Production Account (.log) get replicated to secondary account,
+      wherein access is more narrow
+  keywords: aws, fso, s3, storage, replication  
