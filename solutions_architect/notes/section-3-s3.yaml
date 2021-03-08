@@ -331,3 +331,51 @@
       Objects in Production Account (.log) get replicated to secondary account,
       wherein access is more narrow
   keywords: aws, fso, s3, storage, replication  
+-
+  topic: Describe S3 Transfer Acceleration
+  content: |-
+      - Utilises the CloudFront Edge network to accelerate your uploads to S3
+      - Instead of uploading directly to your S3 bucket, you can use a distinct URL
+        to upload directly to an edge location which will then transfer that file to S3
+      - S3 Transfer Acceleration Speed Comparison Tool
+        http://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html
+  keywords: aws, fso, s3, storage, transfer, acceleration
+-
+  topic: What is AWS DataSync?
+  content: |-
+      - Allows you to move large amounts of data into AWS
+      - Runs as a agent (ideally on a server that has access to your NFS/SMB/Storage)
+      - Use on On-premise data center
+      - Copies data to/from AWS 
+      - Encryption in transit + at-rest
+      - Automatic data integrity checks in transit/at-rest
+      - Connects to Amazon S3, EFS, Amazon FSX for Windows File Server
+      - Can also use to replicate EFS to EFS (install on an EC2 instance)
+  keywords: aws, fso, s3, storage, data, sync, on-prem, migration, data
+-
+  topic: What is AWS CloudFront?
+  content: |-
+      - A content delivery network (CDN)
+      - A CDN is a system of distributed servers (network) that deliver
+        webpages and other web content ot a user based on geographic 
+        locations of the user, the origin of the webpage, and a content
+        delivery server
+      - Edge Location: Location where content will be cached
+        This is separate to an AWS Region/AZ
+      - Origin: This is the origin of all the files that the CDN
+        will distribute. This can be an S3 Bucket, an Ec2 Instance,
+        an Elastic Load Balancer, or Route53
+      - Distribution: This is the name given the CDN which 
+        consists of a collection of Edge locations
+      - Cached assets lives according to TimeToLive (TTL)
+      - Can be used to deliver your entire website, including dynamic,
+        static, streaming, and interactive content using a global
+        network of edge locations. Requests for your content are
+        automatically routed to the nearest edge location, so 
+        content is delivered with the best possible performance.
+      - Two types of distributions
+        - Web - Typically used for Websites
+        - RTMP - Used for Media Streaming
+      - Edge locations are not just Read-Only, you can write to them too
+      - You can clear cached objects (invalidate the cache), but you will be charged
+  keywords: aws, fso, s3, storage, cloudfront, cdn
